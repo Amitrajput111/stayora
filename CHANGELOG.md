@@ -5,6 +5,32 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2024-01-03
+
+### Added
+- Footer with developer name (Amit Singh Rajput) on all pages
+- Empty state messages for bookings and favourites pages
+- Responsive grid layout for property cards
+- Property amenities icons on detail page
+- Form labels and better validation
+- Confirmation dialog for delete actions
+- SVG icons throughout the application
+
+### Changed
+- Complete UI overhaul with modern responsive design
+- Fixed CSS overflow issues using flexbox and grid
+- Improved button styling with hover effects
+- Enhanced favourite button with emoji indicators
+- Better mobile-first responsive design
+- Improved spacing and typography
+- Updated all view files with consistent styling
+
+### Fixed
+- CSS overflow issues on host pages
+- Corrupted home-detail.ejs file
+- Button alignment and sizing issues
+- Form validation and user experience
+
 ## [1.1.0] - 2024-01-02
 
 ### Changed
