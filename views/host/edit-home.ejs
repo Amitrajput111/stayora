@@ -1,41 +1,88 @@
 <%- include('../partials/head') %>
   </head>
-  <body>
+  <body class="min-h-screen flex flex-col bg-gray-50">
     <%- include('../partials/nav') %>
-    <main class="container mx-auto mt-8 p-8 bg-white rounded-lg shadow-md">
-      <h1 class="text-3xl font-bold mb-6 text-center text-gray-800"> <%= editing ? "Edit" : "Register"%> Your Home on Stayora</h1>
-      <form action="/host/<%= editing ?"edit-home" : "add-home"%>" method="POST" class="max-w-md mx-auto">
-        <input
-          type="text"
-          name="houseName"
-          value="<%= editing ? hpme.houseName :''%>"
-          placeholder="Enter your House Name"
-          class="w-full px-4 py-2 mb-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"/>
-        <input
-          type="text"
-          name="price"
-          placeholder="Price Per Night"
-          class="w-full px-4 py-2 mb-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"/>
-        <input
-          type="text"
-          name="location"
-          placeholder="Location"
-          class="w-full px-4 py-2 mb-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"/>
-        <input
-          type="text"
-          name="rating"
-          value="<%= editing ? home.rating : ''%>"
-          placeholder="Rating"
+    <main class="container mx-auto mt-8 p-4 md:p-8 bg-white rounded-lg shadow-md max-w-2xl mb-8 flex-grow">
+      <h1 class="text-2xl md:text-3xl font-bold mb-6 text-center text-gray-800">
+        <%= editing ? "Edit" : "Register"%> Your Property on Stayora
+      </h1>
+      <form action="/host/<%= editing ? 'edit-home' : 'add-home' %>" method="POST" class="max-w-md mx-auto space-y-4">
+        <% if (editing) { %>
+          <input type="hidden" name="id" value="<%= home.id %>" />
+        <% } %>
+        
+        <div>
+          <label class="block text-gray-700 text-sm font-semibold mb-2">Property Name</label>
+          <input
+            type="text"
+            name="houseName"
+            value="<%= editing ? home.houseName : '' %>"
+            placeholder="Enter your property name"
+            required
+            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+          />
+        </div>
 
-          class="w-full px-4 py-2 mb-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"/>
-        <input
-          type="text"
-          name="photoUrl"
-            value="<%= editing ? home.photoUrl : ''%>"
-          placeholder="Enter Photo URL"
-          class="w-full px-4 py-2 mb-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"/>
-        <input type="submit" value="<%= editing ? "update Home" :" Add HOme"%> class="w-full bg-red-500 text-white py-2 rounded-md hover:bg-red-600 transition duration-300" />
+        <div>
+          <label class="block text-gray-700 text-sm font-semibold mb-2">Price Per Night (₹)</label>
+          <input
+            type="number"
+            name="price"
+            value="<%= editing ? home.price : '' %>"
+            placeholder="Enter price per night"
+            required
+            min="0"
+            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+          />
+        </div>
+
+        <div>
+          <label class="block text-gray-700 text-sm font-semibold mb-2">Location</label>
+          <input
+            type="text"
+            name="location"
+            value="<%= editing ? home.location : '' %>"
+            placeholder="Enter location"
+            required
+            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+          />
+        </div>
+
+        <div>
+          <label class="block text-gray-700 text-sm font-semibold mb-2">Rating (1-5)</label>
+          <input
+            type="number"
+            name="rating"
+            value="<%= editing ? home.rating : '' %>"
+            placeholder="Enter rating"
+            required
+            min="1"
+            max="5"
+            step="0.1"
+            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+          />
+        </div>
+
+        <div>
+          <label class="block text-gray-700 text-sm font-semibold mb-2">Photo URL</label>
+          <input
+            type="url"
+            name="photoUrl"
+            value="<%= editing ? home.photoUrl : '' %>"
+            placeholder="Enter photo URL"
+            required
+            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+          />
+        </div>
+
+        <button
+          type="submit"
+          class="w-full bg-red-500 text-white py-3 rounded-md hover:bg-red-600 transition duration-300 font-semibold"
+        >
+          <%= editing ? "Update Property" : "Add Property" %>
+        </button>
       </form>
     </main>
+    <%- include('../partials/footer') %>
   </body>
 </html>
