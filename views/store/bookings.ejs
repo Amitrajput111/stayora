@@ -2,15 +2,15 @@
   </head>
   <body class="min-h-screen flex flex-col bg-gray-50">
     <%- include('../partials/nav') %>
-    <main class="container mx-auto mt-10 mb-8 flex-grow">
+    <main class="container mx-auto mt-6 md:mt-10 mb-8 flex-grow px-4">
       <div class="bg-white shadow-lg rounded-lg p-4 md:p-8 max-w-4xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold text-red-500 mb-6 text-center">My Bookings</h2>
+        <h2 class="text-xl md:text-3xl font-bold text-red-500 mb-6 text-center">My Bookings</h2>
         <% if (bookings.length === 0) { %>
           <div class="text-center py-12">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 mx-auto text-gray-300 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 md:h-24 md:w-24 mx-auto text-gray-300 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
-            <p class="text-gray-500 text-lg mb-2">No bookings yet</p>
+            <p class="text-gray-500 text-base md:text-lg mb-2">No bookings yet</p>
             <p class="text-gray-400 text-sm mb-4">Start exploring and book your perfect stay!</p>
             <a href="/homes" class="inline-block bg-red-500 text-white py-2 px-6 rounded hover:bg-red-600 transition duration-300">
               Browse Properties
