@@ -1,0 +1,14 @@
+<%- include('../partials/favourite', {home: home}) %>
+=======
+              <%- include('../partials/favourite', {home: home}) %>
+              <div class="mt-4">
+                <h4 class="text-lg font-semibold mb-2">Book this Home</h4>
+                <form action="/homes/<%= home.id %>/book" method="POST" class="space-y-2">
+                  <input type="text" name="userName" placeholder="Your Name" required class="w-full p-2 border rounded">
+                  <input type="email" name="email" placeholder="Your Email" required class="w-full p-2 border rounded">
+                  <input type="tel" name="phone" placeholder="Your Phone" required class="w-full p-2 border rounded">
+                  <input type="date" name="checkIn" required class="w-full p-2 border rounded">
+                  <input type="date" name="checkOut" required class="w-full p-2 border rounded">
+                  <button type="submit" class="bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Book Now</button>
+                </form>
+              </div>
