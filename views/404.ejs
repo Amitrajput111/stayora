@@ -1,15 +1,15 @@
 <%- include('partials/head') %>
   </head>
-  <body class="min-h-screen flex flex-col bg-gray-50">
+  <body class="min-h-screen flex flex-col bg-gray-50 overflow-x-hidden">
     <%- include('partials/nav') %>
-    <main class="container mx-auto mt-12 md:mt-20 text-center flex-grow flex items-center justify-center px-4">
-      <div>
-        <h2 class="text-5xl md:text-8xl font-bold text-red-500 mb-4">404</h2>
-        <p class="text-lg md:text-2xl text-gray-700 mb-8">Oops! Page Not Found</p>
-        <p class="text-gray-500 mb-8 text-sm md:text-base">The page you're looking for doesn't exist.</p>
+    <main class="w-full flex-grow flex items-center justify-center px-4">
+      <div class="text-center">
+        <h2 class="text-6xl md:text-8xl font-bold text-red-500 mb-4">404</h2>
+        <p class="text-xl md:text-2xl text-gray-700 mb-8">Oops! Page Not Found</p>
+        <p class="text-gray-500 mb-8">The page you're looking for doesn't exist.</p>
         <a
           href="/"
-          class="inline-block bg-red-500 text-white py-2 md:py-3 px-6 md:px-8 rounded-lg hover:bg-red-600 transition duration-300 font-semibold"
+          class="inline-block bg-red-500 text-white py-3 px-8 rounded-lg hover:bg-red-600 transition duration-300 font-semibold"
         >
           Go Back Home
         </a>

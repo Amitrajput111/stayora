@@ -1,9 +1,9 @@
 <%- include('../partials/head') %>
   </head>
-  <body class="min-h-screen flex flex-col bg-gray-50">
+  <body class="min-h-screen flex flex-col bg-gray-50 overflow-x-hidden">
     <%- include('../partials/nav') %>
-    <main class="container mx-auto mt-6 md:mt-10 mb-8 flex-grow px-4">
-      <div class="bg-white shadow-lg rounded-lg overflow-hidden max-w-5xl mx-auto">
+    <main class="w-full max-w-5xl mx-auto mt-6 md:mt-10 mb-8 flex-grow px-4">
+      <div class="bg-white shadow-lg rounded-lg overflow-hidden">
         <img src="<%= home.photoUrl %>" alt="<%= home.houseName %>" class="w-full h-48 md:h-64 lg:h-96 object-cover" onerror="this.src='/images/house1.png'">
         
         <div class="p-4 md:p-6 lg:p-8">

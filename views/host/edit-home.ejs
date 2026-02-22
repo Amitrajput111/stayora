@@ -1,8 +1,8 @@
 <%- include('../partials/head') %>
   </head>
-  <body class="min-h-screen flex flex-col bg-gray-50">
+  <body class="min-h-screen flex flex-col bg-gray-50 overflow-x-hidden">
     <%- include('../partials/nav') %>
-    <main class="container mx-auto mt-6 md:mt-8 p-4 md:p-8 bg-white rounded-lg shadow-md max-w-2xl mb-8 flex-grow mx-4">
+    <main class="w-full max-w-2xl mx-auto mt-6 md:mt-8 p-4 md:p-8 bg-white rounded-lg shadow-md mb-8 flex-grow">
       <h1 class="text-xl md:text-3xl font-bold mb-6 text-center text-gray-800">
         <%= editing ? "Edit" : "Register"%> Your Property on Stayora
       </h1>
