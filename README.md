@@ -1,9 +1,10 @@
-# Airbnb Clone
+# Stayora
 
-A full-stack Airbnb-like application built with Node.js, Express.js, EJS templating, and Tailwind CSS. This project allows users to browse homes, add to favourites, make bookings, and hosts to manage their listings.
+Stayora - A full-stack hotel booking application built with Node.js, Express.js, EJS templating, and Tailwind CSS. Find and book your perfect stay with ease.
 
 [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D14.0.0-brightgreen)](https://nodejs.org/)
+[![Author](https://img.shields.io/badge/Author-Amit%20Singh%20Rajput-red)](https://github.com/your-username)
 
 ## 🚀 Live Demo
 
@@ -12,17 +13,17 @@ A full-stack Airbnb-like application built with Node.js, Express.js, EJS templat
 ## ✨ Features
 
 ### User Features
-- 🏠 Browse available homes with search functionality
-- 🔍 View detailed home information
-- ❤️ Add/remove homes to/from favourites
+- 🏠 Browse available properties with search functionality
+- 🔍 View detailed property information
+- ❤️ Add/remove properties to/from favourites
 - 📅 Make bookings with user details
 - 📱 Responsive design for all devices
 
 ### Host Features
-- ➕ Add new home listings
-- ✏️ Edit existing home listings
-- 🗑️ Delete home listings
-- 📊 View all hosted homes
+- ➕ Add new property listings
+- ✏️ Edit existing property listings
+- 🗑️ Delete property listings
+- 📊 View all hosted properties
 
 ### General
 - 🎨 Clean, modern UI with Tailwind CSS
@@ -37,10 +38,14 @@ A full-stack Airbnb-like application built with Node.js, Express.js, EJS templat
 - **Data Storage**: JSON files (for demo purposes)
 - **Deployment**: Vercel-ready
 
+## 👨‍💻 Author
+
+**Amit Singh Rajput**
+
 ## 📁 Project Structure
 
 ```
-airbnbDp/
+stayora/
 ├── controllers/          # Request handlers
 │   ├── errors.js
 │   ├── hostController.js
@@ -83,8 +88,8 @@ airbnbDp/
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/airbnb-clone.git
-   cd airbnb-clone
+   git clone https://github.com/your-username/stayora.git
+   cd stayora
    ```
 
 2. **Install dependencies**:
@@ -187,6 +192,6 @@ For questions or feedback, please open an issue on GitHub.
 
 ## 🙏 Acknowledgments
 
-- Inspired by Airbnb
+- Created by Amit Singh Rajput
 - Built with Express.js and EJS
 - Styled with Tailwind CSS

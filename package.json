@@ -1,7 +1,7 @@
 {
-  "name": "airbnb-clone",
+  "name": "stayora",
   "version": "1.0.0",
-  "description": "A full-stack Airbnb-like application built with Node.js, Express.js, EJS templating, and Tailwind CSS",
+  "description": "Stayora - A full-stack hotel booking application built with Node.js, Express.js, EJS templating, and Tailwind CSS",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
@@ -11,13 +11,14 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "airbnb",
+    "stayora",
+    "hotel-booking",
     "express",
     "ejs",
     "tailwindcss",
     "nodejs"
   ],
-  "author": "",
+  "author": "Amit Singh Rajput",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^10.4.21",
