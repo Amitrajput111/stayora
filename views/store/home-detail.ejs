@@ -1,14 +1,14 @@
-<%- include('../partials/favourite', {home: home}) %>
-=======
-              <%- include('../partials/favourite', {home: home}) %>
-              <div class="mt-4">
-                <h4 class="text-lg font-semibold mb-2">Book this Home</h4>
-                <form action="/homes/<%= home.id %>/book" method="POST" class="space-y-2">
-                  <input type="text" name="userName" placeholder="Your Name" required class="w-full p-2 border rounded">
-                  <input type="email" name="email" placeholder="Your Email" required class="w-full p-2 border rounded">
-                  <input type="tel" name="phone" placeholder="Your Phone" required class="w-full p-2 border rounded">
-                  <input type="date" name="checkIn" required class="w-full p-2 border rounded">
-                  <input type="date" name="checkOut" required class="w-full p-2 border rounded">
-                  <button type="submit" class="bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Book Now</button>
+<%- include('../partials/head') %>
+  </head>
+  <body class="min-h-screen flex flex-col bg-gray-50">
+    <%- include('../partials/nav') %>
+    <main class="container mx-auto mt-10 mb-8 flex-grow">
+      <div class="bg-white shadow-lg rounded-lg overflow-hidden max-w-4xl mx-auto">
+        <img src="<%= home.photoUrl %>" alt="<%= home.houseName %>" class="w-full h-64 md:h-96 object-cover" onerror="this.src='/images/house1.png'">
+        
+        <div class="p-6 md:p-8">
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+            <div>
+              <h1 class="text-3xl md:text-4xl font-bue-500 text-white p-2 rounded hover:bg-blue-600">Book Now</button>
                 </form>
               </div>
