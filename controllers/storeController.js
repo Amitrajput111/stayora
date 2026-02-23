@@ -6,10 +6,19 @@ const recommendationService = require("../services/recommendationService");
 exports.getIndex = (req, res, next) => {
   Home.fetchAll((registeredHomes) => {
     Favourite.getFavourites(favourites => {
-      const homesWithFav = registeredHomes.map(home => ({
+      let homesWithFav = registeredHomes.map(home => ({
         ...home,
         isFavourite: favourites.includes(home.id)
       }));
+      
+      // Handle search query
+      const searchQuery = req.query.search;
+      if (searchQuery) {
+        homesWithFav = homesWithFav.filter(home =>
+          home.location.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          home.houseName.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+      }
       
       // Get AI recommendations based on user's favourites
       const recommendations = recommendationService.getRecommendations(
@@ -21,7 +30,8 @@ exports.getIndex = (req, res, next) => {
       res.render("store/index", {
         registeredHomes: homesWithFav,
         recommendations: recommendations,
-        pageTitle: "airbnb Home",
+        searchQuery: searchQuery || '',
+        pageTitle: "Stayora Home",
         currentPage: "index",
       });
     });
