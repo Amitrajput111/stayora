@@ -5,6 +5,28 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.4.0] - 2024-01-05
+
+### Added
+- AI/ML recommendation system with collaborative filtering algorithm
+- Personalized property recommendations on home page
+- Similar properties section on detail pages
+- Search functionality on home page with location and name filtering
+- Real-time search with empty state handling
+- "AI Pick" badges for recommended properties
+- Search query display with clear option
+
+### Changed
+- Updated property names to First House, Second House, Third House
+- Improved home page layout with search bar
+- Enhanced user experience with visual search feedback
+- Updated page title from "airbnb Home" to "Stayora Home"
+
+### Fixed
+- Property IDs now use sequential numbering (1, 2, 3)
+- Search works on both location and property name
+- Empty search results show helpful message
+
 ## [1.3.0] - 2024-01-04
 
 ### Fixed
@@ -19,13 +41,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated navigation labels for better clarity ("Homes" instead of "Homes-List")
 - Simplified page layouts without boxed containers
 - Improved overall spacing and alignment across all pages
-- Updated sample data with proper property names
 - Enhanced viewport meta tag for better mobile experience
 
 ### Added
 - Developer footer with author credit on all pages
 - Proper overflow-x hidden to prevent horizontal scroll
 - Consistent max-width (7xl) across all pages
+- Created input.css for Tailwind compilation
 
 ## [1.2.0] - 2024-01-03
 
@@ -77,6 +99,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - JSON-based data storage
 - Search functionality for homes by location
 - Error handling and 404 pages
+- Professional GitHub repository structure
+- Comprehensive documentation
+- GitHub templates for issues and PRs
+- CI/CD workflow with GitHub Actions
+- Security policy and contributing guidelines
 
 ### Fixed
 - Improved error handling in all models
