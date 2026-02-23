@@ -56,6 +56,9 @@ Stayora is a modern hotel booking platform that enables users to discover, book,
 
 ## 🎬 Demo
 
+### Live Demo
+🔗 **[View Live Demo](https://stayora-ochre.vercel.app)** ← Click to see it in action!
+
 ### Quick Start
 
 ```bash
