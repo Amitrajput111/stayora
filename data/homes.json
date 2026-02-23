@@ -16,11 +16,11 @@
     "id": "0.3110618897485815"
   },
   {
-    "houseName": "amit",
-    "price": "19999",
-    "location": "jaipur",
+    "houseName": "Third House",
+    "price": "2499",
+    "location": "Jaipur",
     "rating": "4.8",
-    "photoUrl": "/random",
+    "photoUrl": "/images/house3.png",
     "id": "0.9561731513498324"
   }
 ]
