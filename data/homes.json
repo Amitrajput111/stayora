@@ -1,26 +1,26 @@
 [
   {
-    "houseName": "Second House",
+    "houseName": "First House",
     "price": "1999",
     "location": "Ghaziabad",
     "rating": "4.9",
     "photoUrl": "/images/house1.png",
-    "id": "2"
+    "id": "1"
   },
   {
-    "houseName": "Summer Home",
+    "houseName": "Second House",
     "price": "1499",
     "location": "Jaipur",
-    "rating": "4",
+    "rating": "4.7",
     "photoUrl": "/images/house2.png",
-    "id": "0.3110618897485815"
+    "id": "2"
   },
   {
     "houseName": "Third House",
     "price": "2499",
-    "location": "Jaipur",
+    "location": "Delhi",
     "rating": "4.8",
     "photoUrl": "/images/house3.png",
-    "id": "0.9561731513498324"
+    "id": "3"
   }
 ]
