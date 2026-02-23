@@ -1,6 +1,7 @@
 const Favourite = require("../models/favourite");
 const Home = require("../models/home");
 const Booking = require("../models/booking");
+const recommendationService = require("../services/recommendationService");
 
 exports.getIndex = (req, res, next) => {
   Home.fetchAll((registeredHomes) => {
@@ -9,8 +10,17 @@ exports.getIndex = (req, res, next) => {
         ...home,
         isFavourite: favourites.includes(home.id)
       }));
+      
+      // Get AI recommendations based on user's favourites
+      const recommendations = recommendationService.getRecommendations(
+        registeredHomes, 
+        favourites, 
+        3
+      );
+      
       res.render("store/index", {
         registeredHomes: homesWithFav,
+        recommendations: recommendations,
         pageTitle: "airbnb Home",
         currentPage: "index",
       });
@@ -93,15 +103,26 @@ exports.getHomeDetails = (req, res, next) => {
     if (!home) {
       res.redirect("/homes");
     } else {
-      Favourite.getFavourites(favourites => {
-        const homeWithFav = {
-          ...home,
-          isFavourite: favourites.includes(homeId)
-        };
-        res.render("store/home-detail", {
-          home: homeWithFav,
-          pageTitle: "Home Detail",
-          currentPage: "Home",
+      Home.fetchAll((allHomes) => {
+        Favourite.getFavourites(favourites => {
+          const homeWithFav = {
+            ...home,
+            isFavourite: favourites.includes(homeId)
+          };
+          
+          // Get similar properties using AI recommendation
+          const similarProperties = recommendationService.getSimilarProperties(
+            home,
+            allHomes,
+            3
+          );
+          
+          res.render("store/home-detail", {
+            home: homeWithFav,
+            similarProperties: similarProperties,
+            pageTitle: "Home Detail",
+            currentPage: "Home",
+          });
         });
       });
     }
