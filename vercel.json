@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "name": "stayora",
   "builds": [
     {
       "src": "app.js",
