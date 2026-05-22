@@ -1,4 +1,4 @@
-# Contributing to Airbnb Clone
+# Contributing to Stayora
 
 Thank you for considering contributing to this project!
 

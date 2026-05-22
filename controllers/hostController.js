@@ -47,7 +47,7 @@ exports.postAddHome = (req, res, next) => {
         currentPage: "error"
       });
     }
-    res.redirect("/host/host-home-list");
+    res.redirect("/host/home-added");
   });
 };
 
@@ -74,5 +74,12 @@ exports.postDeleteHome = (req, res, next) => {
       console.error("Error deleting home:", error);
     }
     res.redirect("/host/host-home-list");
+  });
+};
+
+exports.getHomeAdded = (req, res, next) => {
+  res.render("host/home-added", {
+    pageTitle: "Property Added",
+    currentPage: "addHome"
   });
 };

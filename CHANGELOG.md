@@ -5,6 +5,60 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.6.0] - 2026-05-22
+
+### Fixed
+- Fixed stray `</head>` tag in `home-added.ejs` that broke HTML structure
+- Fixed `vercel.json` static asset routes: replaced overly broad CSS glob with explicit routes for `output.css` and `home.css` to correctly serve compiled Tailwind CSS on Vercel
+- Fixed GitHub Actions `ci.yml` and `deploy.yml`: added `working-directory: airbnbDp` and `cache-dependency-path: airbnbDp/package-lock.json` so CI correctly resolves the project in the monorepo workspace
+- Fixed `home-added.ejs` success page never being rendered: `postAddHome` now redirects to `/host/home-added` instead of directly to the list
+
+### Added
+- Added `GET /host/home-added` route and `getHomeAdded` controller so the property-added success page is reachable
+- Updated `SECURITY.md` to reflect current supported versions (1.5.x, 1.4.x)
+
+## [1.5.0] - 2026-05-21
+
+### Fixed
+- Corrected ESLint config: changed `sourceType` from `"module"` to `"commonjs"` to match the CommonJS codebase
+- Fixed `vercel.json`: replaced `rewrites` (unsupported with `@vercel/node` builds) with `routes` including proper static asset routing for images and CSS
+- Fixed `home.js` model `deleteById`: now pretty-prints JSON on write, consistent with all other write operations
+- Fixed broken git clone URL in README (`htttayora.git` → correct URL)
+- Fixed broken scripts table formatting in README
+
+### Changed
+- Rewrote GitHub Actions CI workflow: correct `working-directory`, removed `continue-on-error` from lint step, dropped Node 16 from matrix (EOL), added format check job
+- Rewrote GitHub Actions deploy workflow: replaced outdated `amondnet/vercel-action` with official Vercel CLI approach
+- Updated README to production quality: accurate badges, correct clone URL, proper scripts table, CI badge
+- Updated CONTRIBUTING.md: renamed from "Airbnb Clone" to "Stayora"
+- Removed dead `tailwind.config.js` (v3 format, unused in Tailwind v4)
+
+## [1.4.1] - 2024-01-06
+
+### Added
+- Comprehensive architecture documentation (ARCHITECTURE.md)
+- Detailed development guide (DEVELOPMENT.md)
+- Quick deployment guide (QUICK_DEPLOY.md)
+- GitHub Actions workflow for automated deployments
+- Dependabot configuration for automated dependency updates
+- Code of Conduct for community guidelines
+- Funding configuration for sponsorship
+- EditorConfig for consistent code formatting
+- Enhanced ESLint and Prettier configurations
+- Additional npm scripts for linting and formatting
+
+### Changed
+- Updated package.json with comprehensive metadata
+- Enhanced CI/CD pipeline with security audits
+- Improved README with proper GitHub links
+- Updated Node.js engine requirement to >=16.0.0
+- Enhanced GitHub workflows with multiple jobs
+
+### Fixed
+- Corrected author information in README
+- Fixed repository URLs throughout documentation
+- Improved code quality standards documentation
+
 ## [1.4.0] - 2024-01-05
 
 ### Added

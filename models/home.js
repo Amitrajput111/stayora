@@ -54,7 +54,7 @@ module.exports = class Home {
     const Favourite = require("./favourite");
     this.fetchAll(homes => {
       homes = homes.filter(home => home.id !== homeId);
-      fs.writeFile(homeDataPath, JSON.stringify(homes), error => {
+      fs.writeFile(homeDataPath, JSON.stringify(homes, null, 2), error => {
         if (error) {
           return callback(error);
         }

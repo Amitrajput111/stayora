@@ -1,38 +1,61 @@
 {
   "name": "stayora",
-  "version": "1.0.0",
-  "description": "Stayora - A full-stack hotel booking application built with Node.js, Express.js, EJS templating, and Tailwind CSS",
+  "version": "1.6.0",
+  "description": "Stayora - A full-stack hotel booking application with AI-powered recommendations built with Node.js, Express.js, EJS templating, and Tailwind CSS",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
     "build": "tailwindcss -i ./views/input.css -o ./public/output.css --minify",
     "tailwind:watch": "tailwindcss -i ./views/input.css -o ./public/output.css --watch",
+    "lint": "eslint . --ext .js",
+    "lint:fix": "eslint . --ext .js --fix",
+    "format": "prettier --write \"**/*.{js,json,md,ejs}\"",
+    "format:check": "prettier --check \"**/*.{js,json,md,ejs}\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "stayora",
     "hotel-booking",
+    "airbnb-clone",
     "express",
     "ejs",
     "tailwindcss",
-    "nodejs"
+    "nodejs",
+    "booking-system",
+    "property-rental",
+    "ai-recommendations",
+    "collaborative-filtering",
+    "mvc-architecture"
   ],
-  "author": "Amit Singh Rajput",
+  "author": {
+    "name": "Amit Singh Rajput",
+    "email": "contact@amitsinghrajput.dev",
+    "url": "https://amitsinghrajput.dev"
+  },
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amitsinghrajput/stayora.git"
+  },
+  "bugs": {
+    "url": "https://github.com/amitsinghrajput/stayora/issues"
+  },
+  "homepage": "https://github.com/amitsinghrajput/stayora#readme",
   "devDependencies": {
     "autoprefixer": "^10.4.21",
+    "eslint": "^8.57.0",
     "nodemon": "^3.1.10",
     "postcss": "^8.5.6",
+    "prettier": "^3.2.5",
     "tailwindcss": "^4.1.13"
   },
   "dependencies": {
-    "body-parser": "^1.20.3",
-    "cookie-parser": "^1.4.7",
     "ejs": "^3.1.10",
     "express": "^5.1.0"
   },
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
   }
 }

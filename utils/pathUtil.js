@@ -1,3 +1,4 @@
 const path = require('path');
 
-module.exports = path.dirname(require.main.filename)
+// Use __dirname to resolve the project root reliably in both local and serverless environments
+module.exports = path.join(__dirname, '..');

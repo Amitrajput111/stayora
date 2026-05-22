@@ -1,371 +1,239 @@
-# 🏠 Stayora - Modern Hotel Booking Platform
+# Stayora — Property Booking Platform
 
 <div align="center">
 
-![Stayora](https://img.shields.io/badge/Stayora-Hotel%20Booking-FF5A5F?style=for-the-badge&logo=airbnb)
-[![Node.js](https://img.shields.io/badge/Node.js-v14+-339933?style=flat-square&logo=node.js&logoColor=white)](https://nodejs.org/)
-[![Express.js](https://img.shields.io/badge/Express.js-v5.1-000000?style=flat-square&logo=express)](https://expressjs.com/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-v4.1-38B2AC?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
+[![Node.js](https://img.shields.io/badge/Node.js-v18+-339933?style=flat-square&logo=node.js&logoColor=white)](https://nodejs.org/)
+[![Express.js](https://img.shields.io/badge/Express.js-v5-000000?style=flat-square&logo=express)](https://expressjs.com/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-v4-38B2AC?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
+[![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-000000?style=flat-square&logo=vercel)](https://stayora-ochre.vercel.app)
 [![License](https://img.shields.io/badge/License-ISC-blue?style=flat-square)](LICENSE)
+[![CI](https://github.com/amitsinghrajput/stayora/actions/workflows/ci.yml/badge.svg)](https://github.com/amitsinghrajput/stayora/actions/workflows/ci.yml)
 
-**A full-stack hotel booking application with AI-powered recommendations**
+A full-stack property booking platform with AI-powered recommendations, built with Node.js, Express, EJS, and Tailwind CSS v4.
 
-[Features](#-features) • [Demo](#-demo) • [Installation](#-installation) • [Tech Stack](#-tech-stack) • [API](#-api-endpoints)
+**[Live Demo](https://stayora-ochre.vercel.app)**
 
 </div>
 
 ---
 
-## 📖 About
+## Features
 
-Stayora is a modern hotel booking platform that enables users to discover, book, and manage property rentals. Built with Node.js, Express, and featuring an intelligent AI recommendation system, Stayora delivers a seamless booking experience.
+**For Guests**
+- Browse and search properties by name or location
+- View property details with a booking form
+- Save favourites and manage them
+- Book properties with check-in/check-out dates
+- View booking history
+- AI-powered recommendations based on your favourites
+- Similar properties shown on detail pages
 
-### Key Highlights
-
-- 🤖 **AI-Powered Recommendations** - Machine learning algorithm suggests properties based on user preferences
-- 🔍 **Smart Search** - Real-time search by location and property name
-- 📱 **Fully Responsive** - Optimized for desktop, tablet, and mobile
-- ⚡ **Fast Performance** - Lightweight architecture with minimal dependencies
-- 🎨 **Modern UI** - Clean interface with Tailwind CSS
-
----
-
-## ✨ Features
-
-### For Guests
-
-| Feature | Description |
-|---------|-------------|
-| 🏡 **Browse Properties** | Explore available accommodations with detailed information |
-| 🔍 **Smart Search** | Filter by location, name, price, and rating |
-| ❤️ **Favorites** | Save properties for later viewing |
-| 📅 **Easy Booking** | Simple booking process with date selection |
-| 🤖 **AI Recommendations** | Get personalized property suggestions |
-| 📊 **Booking History** | Track all your reservations |
-
-### For Hosts
-
-| Feature | Description |
-|---------|-------------|
-| ➕ **Add Properties** | List new properties with photos and details |
-| ✏️ **Edit Listings** | Update property information anytime |
-| 🗑️ **Delete Listings** | Remove properties when needed |
-| 📈 **Dashboard** | Manage all properties in one place |
+**For Hosts**
+- Add, edit, and delete property listings
+- Manage all listings from a single dashboard
 
 ---
 
-## 🎬 Demo
+## Tech Stack
 
-### Live Demo
-🔗 **[View Live Demo](https://stayora-ochre.vercel.app)** ← Click to see it in action!
-
-### Quick Start
-
-```bash
-git clone https://github.com/yourusername/stayora.git
-cd stayora
-npm install
-npm run build
-npm run dev
-```
-
-Visit `http://localhost:3000`
+| Layer | Technology |
+|-------|------------|
+| Runtime | Node.js v18+ |
+| Framework | Express.js v5 |
+| Templating | EJS |
+| Styling | Tailwind CSS v4 |
+| Storage | JSON files |
+| Deployment | Vercel |
 
 ---
 
-## 🛠 Tech Stack
-
-### Backend
-- **Node.js** - JavaScript runtime environment
-- **Express.js** - Fast, minimalist web framework
-- **EJS** - Embedded JavaScript templating
-- **JSON Storage** - File-based data persistence
-
-### Frontend
-- **Tailwind CSS** - Utility-first CSS framework
-- **Vanilla JavaScript** - No framework dependencies
-- **Responsive Design** - Mobile-first approach
-
-### AI/ML
-- **Collaborative Filtering** - Custom recommendation algorithm
-- **Similarity Scoring** - Multi-factor property matching
-- **Real-time Processing** - Instant recommendations
-
----
-
-## 📦 Installation
+## Getting Started
 
 ### Prerequisites
 
-- Node.js (v14.0.0 or higher)
-- npm (v6.0.0 or higher)
-- Git
+- Node.js v18+
+- npm v8+
 
-### Setup Instructions
+### Installation
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/stayora.git
-   cd stayora
-   ```
+```bash
+git clone https://github.com/amitsinghrajput/stayora.git
+cd stayora
+npm install
+```
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+### Environment Setup
 
-3. **Configure environment**
-   ```bash
-   cp .env.example .env
-   ```
-   
-   Edit `.env`:
-   ```env
-   PORT=3000
-   NODE_ENV=development
-   ```
+```bash
+cp .env.example .env
+```
 
-4. **Build CSS**
-   ```bash
-   npm run build
-   ```
+`.env` variables:
 
-5. **Start server**
-   ```bash
-   npm run dev
-   ```
+```env
+PORT=3000
+NODE_ENV=development
+```
 
-6. **Access application**
-   
-   Open `http://localhost:3000` in your browser
+### Build CSS
+
+```bash
+npm run build
+```
+
+### Run
+
+```bash
+# Development (auto-reload)
+npm run dev
+
+# Production
+npm start
+```
+
+Open `http://localhost:3000`
 
 ---
 
-## 🚀 Usage
+## Project Structure
 
-### Available Scripts
+```
+stayora/
+├── app.js                        # Entry point — exports app for Vercel
+├── controllers/
+│   ├── storeController.js        # Guest route handlers
+│   ├── hostController.js         # Host route handlers
+│   └── errors.js                 # 404 handler
+├── models/
+│   ├── home.js                   # Property CRUD
+│   ├── booking.js                # Booking CRUD
+│   └── favourite.js              # Favourites CRUD
+├── routes/
+│   ├── storeRouter.js            # Guest routes
+│   └── hostRouter.js             # Host routes
+├── services/
+│   └── recommendationService.js  # AI recommendation engine
+├── views/
+│   ├── store/                    # Guest-facing pages
+│   ├── host/                     # Host-facing pages
+│   └── partials/                 # Shared components (head, nav, footer)
+├── public/
+│   ├── images/                   # Property images
+│   └── output.css                # Compiled Tailwind CSS
+├── data/
+│   ├── homes.json
+│   ├── bookings.json
+│   └── favourite.json
+├── utils/
+│   └── pathUtil.js               # Root path resolver
+└── vercel.json                   # Vercel deployment config
+```
+
+---
+
+## API Endpoints
+
+### Guest
+
+| Method | Route | Description |
+|--------|-------|-------------|
+| GET | `/` | Home page with AI recommendations |
+| GET | `/homes` | Browse all properties |
+| GET | `/homes/:id` | Property detail + similar properties |
+| POST | `/homes/:id/book` | Submit a booking |
+| GET | `/bookings` | View booking history |
+| GET | `/favourites` | View saved favourites |
+| POST | `/favourites` | Add to favourites |
+| POST | `/favourites/delete/:id` | Remove from favourites |
+
+### Host
+
+| Method | Route | Description |
+|--------|-------|-------------|
+| GET | `/host/add-home` | Add property form |
+| POST | `/host/add-home` | Create property |
+| GET | `/host/host-home-list` | Manage listings |
+| GET | `/host/edit-home/:id` | Edit property form |
+| POST | `/host/edit-home` | Update property |
+| POST | `/host/delete-home/:id` | Delete property |
+
+---
+
+## AI Recommendation System
+
+The recommendation engine uses content-based collaborative filtering:
+
+```
+Similarity = (Location match × 0.4) + (Price proximity × 0.3) + (Rating proximity × 0.3)
+```
+
+- New users see top-rated properties
+- Returning users get recommendations based on their favourites
+- Detail pages show similar properties by similarity score
+
+---
+
+## Deployment
+
+### Vercel (recommended)
+
+Connect your GitHub repo in the [Vercel dashboard](https://vercel.com/dashboard) for automatic deployments on every push to `main`.
+
+Or deploy manually:
+
+```bash
+npm install -g vercel
+vercel --prod
+```
+
+See [DEPLOYMENT.md](DEPLOYMENT.md) for the full step-by-step guide.
+
+### Environment Variables on Vercel
+
+Set `NODE_ENV=production` in your Vercel project settings. `PORT` is managed by Vercel automatically.
+
+---
+
+## Scripts
 
 | Command | Description |
 |---------|-------------|
 | `npm start` | Start production server |
-| `npm run dev` | Start development server with auto-reload |
+| `npm run dev` | Start dev server with nodemon |
 | `npm run build` | Build and minify Tailwind CSS |
-| `npm run tailwind:watch` | Watch CSS changes in development |
-
-### Environment Variables
-
-| Variable | Description | Default |
-|----------|-------------|---------|
-| `PORT` | Server port | `3000` |
-| `NODE_ENV` | Environment | `development` |
+| `npm run tailwind:watch` | Watch CSS in development |
+| `npm run lint` | Run ESLint |
+| `npm run lint:fix` | Auto-fix lint issues |
+| `npm run format` | Format code with Prettier |
+| `npm run format:check` | Check formatting without writing |
 
 ---
 
-## 📁 Project Structure
+## Contributing
 
-```
-stayora/
-├── controllers/              # Request handlers
-│   ├── errors.js            # Error handling
-│   ├── hostController.js    # Host operations
-│   └── storeController.js   # Guest operations
-├── data/                    # JSON data storage
-│   ├── bookings.json        # Booking records
-│   ├── favourite.json       # User favorites
-│   └── homes.json           # Property listings
-├── models/                  # Data models
-│   ├── booking.js           # Booking model
-│   ├── favourite.js         # Favorite model
-│   └── home.js              # Property model
-├── routes/                  # Route definitions
-│   ├── hostRouter.js        # Host routes
-│   └── storeRouter.js       # Guest routes
-├── services/                # Business logic
-│   └── recommendationService.js  # AI engine
-├── public/                  # Static assets
-│   ├── images/              # Property images
-│   └── output.css           # Compiled CSS
-├── views/                   # EJS templates
-│   ├── host/                # Host views
-│   ├── store/               # Guest views
-│   └── partials/            # Reusable components
-├── app.js                   # Application entry
-├── package.json             # Dependencies
-└── tailwind.config.js       # Tailwind config
-```
+1. Fork the repo
+2. Create a feature branch: `git checkout -b feature/your-feature`
+3. Commit with conventional commits: `git commit -m "feat: add feature"`
+4. Push and open a PR
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for full guidelines.
 
 ---
 
-## 🔌 API Endpoints
+## Changelog
 
-### Guest Routes
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/` | Home page with AI recommendations |
-| `GET` | `/homes` | Browse all properties |
-| `GET` | `/homes/:id` | Property details with similar properties |
-| `POST` | `/homes/:id/book` | Book a property |
-| `GET` | `/favourites` | View favorite properties |
-| `POST` | `/favourites` | Add to favorites |
-| `POST` | `/favourites/:id/remove` | Remove from favorites |
-| `GET` | `/bookings` | View all bookings |
-
-### Host Routes
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/host/add-home` | Add property form |
-| `POST` | `/host/add-home` | Create new property |
-| `GET` | `/host/host-home-list` | View all properties |
-| `GET` | `/host/edit-home/:id` | Edit property form |
-| `POST` | `/host/edit-home` | Update property |
-| `POST` | `/host/delete-home/:id` | Delete property |
+See [CHANGELOG.md](CHANGELOG.md) for the full version history.
 
 ---
 
-## 🤖 AI Recommendation System
+## License
 
-### Algorithm Overview
-
-The recommendation engine uses collaborative filtering with multi-factor similarity scoring:
-
-```javascript
-Similarity Score = (Location Match × 0.4) + 
-                   (Price Match × 0.3) + 
-                   (Rating Match × 0.3)
-```
-
-### Features
-
-1. **Personalized Recommendations**
-   - Analyzes user's favorite properties
-   - Suggests similar properties based on preferences
-   - Falls back to popular properties for new users
-
-2. **Similar Properties**
-   - Shows related properties on detail pages
-   - Helps users discover alternatives
-   - Improves engagement and conversion
-
-3. **Real-time Processing**
-   - Instant recommendations
-   - No external API calls
-   - Lightweight and fast
+ISC — see [LICENSE](LICENSE)
 
 ---
 
-## 🎨 Customization
-
-### Changing Theme Colors
-
-Edit `tailwind.config.js`:
-
-```javascript
-module.exports = {
-  theme: {
-    extend: {
-      colors: {
-        primary: '#FF5A5F',  // Stayora red
-        secondary: '#00A699', // Teal accent
-      }
-    }
-  }
-}
-```
-
-### Adding New Features
-
-1. Create model in `models/`
-2. Add controller logic in `controllers/`
-3. Define routes in `routes/`
-4. Create views in `views/`
-5. Update documentation
-
----
-
-## 🚀 Deployment
-
-### Vercel (Recommended)
-
-```bash
-npm i -g vercel
-vercel
-```
-
-### Heroku
-
-```bash
-heroku create stayora-app
-git push heroku main
-heroku config:set PORT=3000
-```
-
-### Manual Deployment
-
-1. Build CSS: `npm run build`
-2. Set environment variables
-3. Start server: `npm start`
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Please follow these guidelines:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit changes (`git commit -m 'Add AmazingFeature'`)
-4. Push to branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-### Coding Standards
-
-- Use meaningful variable names
-- Comment complex logic
-- Follow existing code style
-- Test before submitting
-- Update documentation
-
----
-
-## 📝 License
-
-This project is licensed under the ISC License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 👨‍💻 Author
+## Author
 
 **Amit Singh Rajput**
-
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your Profile](https://linkedin.com/in/yourprofile)
-- Email: your.email@example.com
-
----
-
-## 🙏 Acknowledgments
-
-- Inspired by modern booking platforms
-- Built with best practices and clean code
-- Thanks to the open-source community
-
----
-
-## 📊 Version History
-
-- **v1.3.0** - Added AI recommendations and search functionality
-- **v1.2.0** - UI overhaul with responsive design
-- **v1.1.0** - Rebranded to Stayora
-- **v1.0.0** - Initial release
-
----
-
-<div align="center">
-
-**⭐ Star this repo if you find it helpful!**
-
-Made with ❤️ by Amit Singh Rajput
-
-</div>
+- GitHub: [@amitsinghrajput](https://github.com/amitsinghrajput)
+- Portfolio: [amitsinghrajput.dev](https://amitsinghrajput.dev)

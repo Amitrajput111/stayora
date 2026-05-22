@@ -1,18 +1,40 @@
 {
   "version": 2,
+  "name": "stayora",
   "builds": [
     {
       "src": "app.js",
       "use": "@vercel/node",
       "config": {
-        "includeFiles": ["views/**", "public/**", "data/**"]
+        "includeFiles": [
+          "views/**",
+          "public/**",
+          "data/**",
+          "models/**",
+          "controllers/**",
+          "routes/**",
+          "services/**",
+          "utils/**"
+        ]
       }
     }
   ],
   "routes": [
     {
+      "src": "/output\\.css",
+      "dest": "/public/output.css"
+    },
+    {
+      "src": "/home\\.css",
+      "dest": "/public/home.css"
+    },
+    {
+      "src": "/images/(.*)",
+      "dest": "/public/images/$1"
+    },
+    {
       "src": "/(.*)",
-      "dest": "app.js"
+      "dest": "/app.js"
     }
   ]
 }
