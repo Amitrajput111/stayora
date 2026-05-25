@@ -8,7 +8,7 @@ A full-stack property booking platform built with Node.js, Express, EJS, and Tai
 [![License](https://img.shields.io/badge/License-ISC-blue?style=flat-square)](LICENSE)
 [![CI](https://github.com/Amitrajput111/stayora/actions/workflows/ci.yml/badge.svg)](https://github.com/Amitrajput111/stayora/actions/workflows/ci.yml)
 
-**Live demo:** https://stayora-ochre.vercel.app
+**Live demo:** https://stayora-gn3uxnvdz-amitrajput111s-projects.vercel.app/
 
 ---
 
