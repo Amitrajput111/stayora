@@ -1,40 +1,35 @@
-# Stayora — Property Booking Platform
+# Stayora
 
-<div align="center">
+A full-stack property booking platform built with Node.js, Express, EJS, and Tailwind CSS. Features content-based property recommendations, search, favourites, and a host management dashboard.
 
 [![Node.js](https://img.shields.io/badge/Node.js-v18+-339933?style=flat-square&logo=node.js&logoColor=white)](https://nodejs.org/)
 [![Express.js](https://img.shields.io/badge/Express.js-v5-000000?style=flat-square&logo=express)](https://expressjs.com/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-v4-38B2AC?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
-[![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-000000?style=flat-square&logo=vercel)](https://stayora-ochre.vercel.app)
 [![License](https://img.shields.io/badge/License-ISC-blue?style=flat-square)](LICENSE)
-[![CI](https://github.com/amitsinghrajput/stayora/actions/workflows/ci.yml/badge.svg)](https://github.com/amitsinghrajput/stayora/actions/workflows/ci.yml)
+[![CI](https://github.com/Amitrajput111/stayora/actions/workflows/ci.yml/badge.svg)](https://github.com/Amitrajput111/stayora/actions/workflows/ci.yml)
 
-A full-stack property booking platform with AI-powered recommendations, built with Node.js, Express, EJS, and Tailwind CSS v4.
-
-**[Live Demo](https://stayora-ochre.vercel.app)**
-
-</div>
+**Live demo:** https://stayora-ochre.vercel.app
 
 ---
 
 ## Features
 
-**For Guests**
+**Guests**
 - Browse and search properties by name or location
-- View property details with a booking form
-- Save favourites and manage them
-- Book properties with check-in/check-out dates
+- View property details with an inline booking form
+- Save and manage favourites
+- Book with check-in / check-out dates
 - View booking history
-- AI-powered recommendations based on your favourites
-- Similar properties shown on detail pages
+- Recommendations based on favourites (content-based filtering)
+- Similar properties on detail pages
 
-**For Hosts**
+**Hosts**
 - Add, edit, and delete property listings
 - Manage all listings from a single dashboard
 
 ---
 
-## Tech Stack
+## Tech stack
 
 | Layer | Technology |
 |-------|------------|
@@ -42,35 +37,35 @@ A full-stack property booking platform with AI-powered recommendations, built wi
 | Framework | Express.js v5 |
 | Templating | EJS |
 | Styling | Tailwind CSS v4 |
-| Storage | JSON files |
+| Storage | JSON files (demo) |
 | Deployment | Vercel |
 
 ---
 
-## Getting Started
+## Getting started
 
 ### Prerequisites
 
 - Node.js v18+
 - npm v8+
 
-### Installation
+### Install
 
 ```bash
-git clone https://github.com/amitsinghrajput/stayora.git
+git clone https://github.com/Amitrajput111/stayora.git
 cd stayora
 npm install
 ```
 
-### Environment Setup
+### Environment
 
 ```bash
 cp .env.example .env
 ```
 
-`.env` variables:
+The only variable needed locally:
 
-```env
+```
 PORT=3000
 NODE_ENV=development
 ```
@@ -95,11 +90,11 @@ Open `http://localhost:3000`
 
 ---
 
-## Project Structure
+## Project structure
 
 ```
 stayora/
-├── app.js                        # Entry point — exports app for Vercel
+├── app.js                        # Entry point
 ├── controllers/
 │   ├── storeController.js        # Guest route handlers
 │   ├── hostController.js         # Host route handlers
@@ -112,11 +107,13 @@ stayora/
 │   ├── storeRouter.js            # Guest routes
 │   └── hostRouter.js             # Host routes
 ├── services/
-│   └── recommendationService.js  # AI recommendation engine
+│   └── recommendationService.js  # Recommendation engine
 ├── views/
-│   ├── store/                    # Guest-facing pages
-│   ├── host/                     # Host-facing pages
-│   └── partials/                 # Shared components (head, nav, footer)
+│   ├── store/                    # Guest pages
+│   ├── host/                     # Host pages
+│   ├── partials/                 # Shared partials (head, nav, footer)
+│   ├── 404.ejs
+│   └── input.css                 # Tailwind source
 ├── public/
 │   ├── images/                   # Property images
 │   └── output.css                # Compiled Tailwind CSS
@@ -125,24 +122,24 @@ stayora/
 │   ├── bookings.json
 │   └── favourite.json
 ├── utils/
-│   └── pathUtil.js               # Root path resolver
-└── vercel.json                   # Vercel deployment config
+│   └── pathUtil.js
+└── vercel.json
 ```
 
 ---
 
-## API Endpoints
+## Routes
 
 ### Guest
 
 | Method | Route | Description |
 |--------|-------|-------------|
-| GET | `/` | Home page with AI recommendations |
-| GET | `/homes` | Browse all properties |
+| GET | `/` | Home — search + recommendations |
+| GET | `/homes` | All properties |
 | GET | `/homes/:id` | Property detail + similar properties |
-| POST | `/homes/:id/book` | Submit a booking |
-| GET | `/bookings` | View booking history |
-| GET | `/favourites` | View saved favourites |
+| POST | `/homes/:id/book` | Submit booking |
+| GET | `/bookings` | Booking history |
+| GET | `/favourites` | Saved favourites |
 | POST | `/favourites` | Add to favourites |
 | POST | `/favourites/delete/:id` | Remove from favourites |
 
@@ -152,6 +149,7 @@ stayora/
 |--------|-------|-------------|
 | GET | `/host/add-home` | Add property form |
 | POST | `/host/add-home` | Create property |
+| GET | `/host/home-added` | Success page |
 | GET | `/host/host-home-list` | Manage listings |
 | GET | `/host/edit-home/:id` | Edit property form |
 | POST | `/host/edit-home` | Update property |
@@ -159,38 +157,17 @@ stayora/
 
 ---
 
-## AI Recommendation System
+## Recommendation system
 
-The recommendation engine uses content-based collaborative filtering:
+Content-based filtering using a weighted similarity score:
 
 ```
-Similarity = (Location match × 0.4) + (Price proximity × 0.3) + (Rating proximity × 0.3)
+score = (location match × 0.4) + (price proximity × 0.3) + (rating proximity × 0.3)
 ```
 
-- New users see top-rated properties
-- Returning users get recommendations based on their favourites
-- Detail pages show similar properties by similarity score
-
----
-
-## Deployment
-
-### Vercel (recommended)
-
-Connect your GitHub repo in the [Vercel dashboard](https://vercel.com/dashboard) for automatic deployments on every push to `main`.
-
-Or deploy manually:
-
-```bash
-npm install -g vercel
-vercel --prod
-```
-
-See [DEPLOYMENT.md](DEPLOYMENT.md) for the full step-by-step guide.
-
-### Environment Variables on Vercel
-
-Set `NODE_ENV=production` in your Vercel project settings. `PORT` is managed by Vercel automatically.
+- No favourites → top-rated properties shown
+- With favourites → scored against each saved property, averaged
+- Detail page → similar properties by score
 
 ---
 
@@ -204,25 +181,22 @@ Set `NODE_ENV=production` in your Vercel project settings. `PORT` is managed by 
 | `npm run tailwind:watch` | Watch CSS in development |
 | `npm run lint` | Run ESLint |
 | `npm run lint:fix` | Auto-fix lint issues |
-| `npm run format` | Format code with Prettier |
-| `npm run format:check` | Check formatting without writing |
+| `npm run format` | Format with Prettier |
+| `npm run format:check` | Check formatting |
+
+---
+
+## Deployment
+
+The app is deployed on Vercel. See [DEPLOYMENT.md](DEPLOYMENT.md) for the full guide.
+
+For automated deployments, connect the GitHub repo in the [Vercel dashboard](https://vercel.com/dashboard) — every push to `main` deploys automatically.
 
 ---
 
 ## Contributing
 
-1. Fork the repo
-2. Create a feature branch: `git checkout -b feature/your-feature`
-3. Commit with conventional commits: `git commit -m "feat: add feature"`
-4. Push and open a PR
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for full guidelines.
-
----
-
-## Changelog
-
-See [CHANGELOG.md](CHANGELOG.md) for the full version history.
+See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ---
 
@@ -232,8 +206,4 @@ ISC — see [LICENSE](LICENSE)
 
 ---
 
-## Author
-
-**Amit Singh Rajput**
-- GitHub: [@amitsinghrajput](https://github.com/amitsinghrajput)
-- Portfolio: [amitsinghrajput.dev](https://amitsinghrajput.dev)
+**Amit Singh Rajput** · [GitHub](https://github.com/Amitrajput111) · [amitsinghrajput.dev](https://amitsinghrajput.dev)

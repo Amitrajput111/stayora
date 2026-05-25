@@ -1,5 +1,5 @@
-// Simple AI/ML Recommendation System
-// Uses collaborative filtering and content-based filtering
+// Simple Recommendation Service
+// Uses collaborative filtering and content-based filtering algorithms
 
 class RecommendationService {
   /**

@@ -1,40 +1,31 @@
-# Contributing to Stayora
+# Contributing
 
-Thank you for considering contributing to this project!
+Thanks for taking the time to contribute.
 
-## Development Workflow
+## Workflow
 
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/your-feature-name`
-3. Make your changes
-4. Test your changes locally
-5. Commit with conventional commits: `git commit -m "feat: add new feature"`
-6. Push to your fork: `git push origin feature/your-feature-name`
-7. Open a Pull Request
+1. Fork the repo
+2. Create a branch: `git checkout -b feature/your-feature` or `bugfix/your-fix`
+3. Make your changes and test locally
+4. Commit using [Conventional Commits](https://www.conventionalcommits.org/):
+   ```
+   feat: add date range validation to booking form
+   fix: resolve empty search results on mobile
+   docs: update deployment instructions
+   chore: bump dependencies
+   ```
+5. Push and open a pull request against `main`
 
-## Commit Convention
+## Code style
 
-We follow [Conventional Commits](https://www.conventionalcommits.org/):
+- 2-space indentation
+- Single quotes in JS
+- ESLint + Prettier are configured — run `npm run lint` and `npm run format:check` before pushing
 
-- `feat:` - New feature
-- `fix:` - Bug fix
-- `docs:` - Documentation changes
-- `style:` - Code style changes (formatting, etc.)
-- `refactor:` - Code refactoring
-- `test:` - Adding or updating tests
-- `chore:` - Maintenance tasks
+## Before submitting a PR
 
-## Code Style
-
-- Use 2 spaces for indentation
-- Follow ESLint rules
-- Use meaningful variable names
-- Add comments for complex logic
-
-## Testing
-
-Before submitting a PR:
-1. Test all features manually
-2. Ensure no console errors
-3. Check responsive design
-4. Verify all routes work correctly
+- [ ] All routes work locally
+- [ ] No console errors
+- [ ] Responsive on mobile
+- [ ] `npm run lint` passes
+- [ ] `npm run build` succeeds

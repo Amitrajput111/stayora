@@ -20,7 +20,7 @@ exports.getIndex = (req, res, next) => {
         );
       }
       
-      // Get AI recommendations based on user's favourites
+      // Get personalized recommendations based on user's favourites
       const recommendations = recommendationService.getRecommendations(
         registeredHomes, 
         favourites, 
@@ -120,7 +120,7 @@ exports.getHomeDetails = (req, res, next) => {
             isFavourite: favourites.includes(homeId)
           };
           
-          // Get similar properties using AI recommendation
+          // Get similar properties using recommendation service
           const similarProperties = recommendationService.getSimilarProperties(
             home,
             allHomes,

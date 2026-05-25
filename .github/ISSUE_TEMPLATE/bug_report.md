@@ -1,31 +1,31 @@
 ---
 name: Bug report
-about: Create a report to help us improve
-title: '[BUG] '
+about: Something isn't working as expected
+title: '[bug] '
 labels: bug
 assignees: ''
 ---
 
-## Bug Description
-A clear and concise description of what the bug is.
+## What happened?
 
-## Steps To Reproduce
+<!-- Clear description of the bug -->
+
+## Steps to reproduce
+
 1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+2. Click '...'
+3. See error
 
-## Expected Behavior
-A clear and concise description of what you expected to happen.
+## Expected behaviour
 
-## Screenshots
-If applicable, add screenshots to help explain your problem.
+<!-- What should have happened -->
 
 ## Environment
-- OS: [e.g. Windows, macOS, Linux]
-- Browser: [e.g. Chrome, Firefox, Safari]
-- Node Version: [e.g. 14.17.0]
-- npm Version: [e.g. 6.14.13]
 
-## Additional Context
-Add any other context about the problem here.
+- OS:
+- Browser:
+- Node version: (`node -v`)
+
+## Screenshots / logs
+
+<!-- If applicable -->

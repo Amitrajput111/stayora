@@ -7,166 +7,105 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.6.0] - 2026-05-22
 
-### Fixed
-- Fixed stray `</head>` tag in `home-added.ejs` that broke HTML structure
-- Fixed `vercel.json` static asset routes: replaced overly broad CSS glob with explicit routes for `output.css` and `home.css` to correctly serve compiled Tailwind CSS on Vercel
-- Fixed GitHub Actions `ci.yml` and `deploy.yml`: added `working-directory: airbnbDp` and `cache-dependency-path: airbnbDp/package-lock.json` so CI correctly resolves the project in the monorepo workspace
-- Fixed `home-added.ejs` success page never being rendered: `postAddHome` now redirects to `/host/home-added` instead of directly to the list
-
 ### Added
-- Added `GET /host/home-added` route and `getHomeAdded` controller so the property-added success page is reachable
-- Updated `SECURITY.md` to reflect current supported versions (1.5.x, 1.4.x)
+- `GET /host/home-added` route and `getHomeAdded` controller — success page was previously unreachable
+- `CODE_OF_CONDUCT.md` and `dependabot.yml` to `.github/`
+- Automated deploy workflow using Vercel CLI (`deploy.yml`)
+
+### Fixed
+- `home-added.ejs` had a stray `</head>` tag that broke HTML structure
+- `postAddHome` now redirects to `/host/home-added` instead of skipping the success page
+- `vercel.json` static asset routes replaced with explicit rules (CSS glob was broken)
+- GitHub Actions `ci.yml` and `deploy.yml` now set correct `working-directory` and `cache-dependency-path` for the monorepo layout
+- `dependabot.yml` npm directory corrected to `/airbnbDp`
+- Removed deprecated `name` property from `vercel.json`
+
+### Removed
+- Dead/unused files: `views/store/favourite.ejs` (old broken view), `views/store/reserve.ejs` (empty), `public/home.css` (unused)
+- Redundant docs: `ARCHITECTURE.md`, `DEVELOPMENT.md`, `QUICK_DEPLOY.md`, `PROJECT_STATUS.md`, `deploy.bat`, `.github/FUNDING.yml`, `.github/PROJECT_SUMMARY.md`
+- `tailwind.config.js` (Tailwind v3 format, unused with v4)
+
+### Changed
+- `.nvmrc` updated from `14.0.0` to `20`
+- `README.md` rewritten: correct GitHub username, accurate badge URLs, clean structure
+- `package.json` repository/bugs/homepage URLs corrected to `Amitrajput111/stayora`
+- `SECURITY.md` supported versions updated to reflect current release
 
 ## [1.5.0] - 2026-05-21
 
 ### Fixed
-- Corrected ESLint config: changed `sourceType` from `"module"` to `"commonjs"` to match the CommonJS codebase
-- Fixed `vercel.json`: replaced `rewrites` (unsupported with `@vercel/node` builds) with `routes` including proper static asset routing for images and CSS
-- Fixed `home.js` model `deleteById`: now pretty-prints JSON on write, consistent with all other write operations
-- Fixed broken git clone URL in README (`htttayora.git` → correct URL)
-- Fixed broken scripts table formatting in README
+- ESLint config `sourceType` corrected from `"module"` to `"commonjs"`
+- `vercel.json` replaced unsupported `rewrites` with `routes`
+- `home.js` model `deleteById` now pretty-prints JSON on write
+- Broken git clone URL in README
 
 ### Changed
-- Rewrote GitHub Actions CI workflow: correct `working-directory`, removed `continue-on-error` from lint step, dropped Node 16 from matrix (EOL), added format check job
-- Rewrote GitHub Actions deploy workflow: replaced outdated `amondnet/vercel-action` with official Vercel CLI approach
-- Updated README to production quality: accurate badges, correct clone URL, proper scripts table, CI badge
-- Updated CONTRIBUTING.md: renamed from "Airbnb Clone" to "Stayora"
-- Removed dead `tailwind.config.js` (v3 format, unused in Tailwind v4)
-
-## [1.4.1] - 2024-01-06
-
-### Added
-- Comprehensive architecture documentation (ARCHITECTURE.md)
-- Detailed development guide (DEVELOPMENT.md)
-- Quick deployment guide (QUICK_DEPLOY.md)
-- GitHub Actions workflow for automated deployments
-- Dependabot configuration for automated dependency updates
-- Code of Conduct for community guidelines
-- Funding configuration for sponsorship
-- EditorConfig for consistent code formatting
-- Enhanced ESLint and Prettier configurations
-- Additional npm scripts for linting and formatting
-
-### Changed
-- Updated package.json with comprehensive metadata
-- Enhanced CI/CD pipeline with security audits
-- Improved README with proper GitHub links
-- Updated Node.js engine requirement to >=16.0.0
-- Enhanced GitHub workflows with multiple jobs
-
-### Fixed
-- Corrected author information in README
-- Fixed repository URLs throughout documentation
-- Improved code quality standards documentation
+- GitHub Actions CI workflow rewritten with correct working directory, Node 18/20 matrix, format check job
+- GitHub Actions deploy workflow replaced outdated action with official Vercel CLI approach
+- README updated with accurate badges and clone URL
 
 ## [1.4.0] - 2024-01-05
 
 ### Added
-- AI/ML recommendation system with collaborative filtering algorithm
-- Personalized property recommendations on home page
+- Content-based recommendation system with collaborative filtering
+- Personalized recommendations on home page
 - Similar properties section on detail pages
-- Search functionality on home page with location and name filtering
-- Real-time search with empty state handling
-- "AI Pick" badges for recommended properties
-- Search query display with clear option
+- Search by location and property name on home page
+- "AI Pick" badges on recommended cards
 
 ### Changed
-- Updated property names to First House, Second House, Third House
-- Improved home page layout with search bar
-- Enhanced user experience with visual search feedback
-- Updated page title from "airbnb Home" to "Stayora Home"
+- Home page layout updated with search bar
+- Page title updated to "Stayora Home"
 
 ### Fixed
-- Property IDs now use sequential numbering (1, 2, 3)
-- Search works on both location and property name
-- Empty search results show helpful message
+- Property IDs use sequential numbering (1, 2, 3)
+- Search handles both location and name fields
 
 ## [1.3.0] - 2024-01-04
 
 ### Fixed
-- Removed horizontal scrollbar and sidebar issues
-- Fixed viewport zoom problems on mobile devices
-- Removed unnecessary container boxes for cleaner layout
-- Improved responsive navigation with better spacing
-- Fixed all pages to use consistent max-width layout
-- Rebuilt Tailwind CSS with proper configuration
+- Horizontal scrollbar removed
+- Viewport zoom issues on mobile
+- Inconsistent max-width across pages
 
 ### Changed
-- Updated navigation labels for better clarity ("Homes" instead of "Homes-List")
-- Simplified page layouts without boxed containers
-- Improved overall spacing and alignment across all pages
-- Enhanced viewport meta tag for better mobile experience
+- Navigation labels updated ("Homes" instead of "Homes-List")
+- Consistent `max-w-7xl` layout across all pages
 
 ### Added
-- Developer footer with author credit on all pages
-- Proper overflow-x hidden to prevent horizontal scroll
-- Consistent max-width (7xl) across all pages
-- Created input.css for Tailwind compilation
+- Developer footer on all pages
+- `input.css` for Tailwind compilation
 
 ## [1.2.0] - 2024-01-03
 
 ### Added
-- Footer with developer name (Amit Singh Rajput) on all pages
-- Empty state messages for bookings and favourites pages
+- Empty state messages for bookings and favourites
 - Responsive grid layout for property cards
-- Property amenities icons on detail page
-- Form labels and better validation
+- Property amenity icons on detail page
 - Confirmation dialog for delete actions
-- SVG icons throughout the application
 
 ### Changed
-- Complete UI overhaul with modern responsive design
-- Fixed CSS overflow issues using flexbox and grid
-- Improved button styling with hover effects
-- Enhanced favourite button with emoji indicators
-- Better mobile-first responsive design
-- Improved spacing and typography
-- Updated all view files with consistent styling
+- Full UI overhaul with Tailwind CSS
+- Mobile-first responsive design
 
 ### Fixed
 - CSS overflow issues on host pages
-- Corrupted home-detail.ejs file
-- Button alignment and sizing issues
-- Form validation and user experience
+- Button alignment and sizing
 
 ## [1.1.0] - 2024-01-02
 
 ### Changed
 - Rebranded from Airbnb Clone to Stayora
-- Updated all branding and UI text to Stayora
-- Added author information: Amit Singh Rajput
-- Fixed image display issues with fallback images
-- Enhanced meta tags with author and description
-
-### Fixed
-- Images now display correctly with fallback to default image
-- All external image URLs replaced with local assets
+- Replaced external image URLs with local assets
 
 ## [1.0.0] - 2024-01-01
 
 ### Added
-- Initial release of hotel booking application
-- User features: browse homes, view details, add to favourites, make bookings
-- Host features: add, edit, delete home listings
+- Initial release
+- Guest features: browse, search, favourites, bookings
+- Host features: add, edit, delete listings
 - Responsive design with Tailwind CSS
-- EJS templating for server-side rendering
-- JSON-based data storage
-- Search functionality for homes by location
-- Error handling and 404 pages
-- Professional GitHub repository structure
-- Comprehensive documentation
-- GitHub templates for issues and PRs
-- CI/CD workflow with GitHub Actions
-- Security policy and contributing guidelines
-
-### Fixed
-- Improved error handling in all models
-- Fixed ID generation to be more unique
-- Fixed JSON parsing errors with proper try-catch blocks
-- Standardized code formatting across all files
-- Fixed callback error handling in controllers
-
-### Changed
-- Improved code quality and consistency
-- Added proper indentation to JSON data files
-- Enhanced error messages for better debugging
+- EJS server-side rendering
+- JSON file storage
+- 404 error handling
+- GitHub Actions CI workflow
