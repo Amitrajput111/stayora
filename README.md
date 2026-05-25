@@ -190,7 +190,7 @@ score = (location match × 0.4) + (price proximity × 0.3) + (rating proximity �
 
 The app is deployed on Vercel. See [DEPLOYMENT.md](DEPLOYMENT.md) for the full guide.
 
-For automated deployments, connect the GitHub repo in the [Vercel dashboard](https://vercel.com/dashboard) — every push to `main` deploys automatically.
+For automated deployments, connect the GitHub repo in the [Vercel dashboard]([https://vercel.com/dashboard](https://stayora-gc5mry7wq-amitrajput111s-projects.vercel.app/)) — every push to `main` deploys automatically.
 
 ---
 
