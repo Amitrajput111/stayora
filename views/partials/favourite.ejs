@@ -1,13 +1,13 @@
 <% if (home.isFavourite) { %>
   <form action="/favourites/delete/<%= home.id %>" method="POST" class="flex-1">
-    <button type="submit" class="w-full bg-red-500 hover:bg-red-600 text-white py-2 px-3 rounded transition duration-300 text-sm">
+    <button type="submit" class="w-full bg-red-500 hover:bg-red-600 text-white py-3 px-4 rounded transition duration-300 text-base font-semibold shadow-sm">
       ❤️ Remove
     </button>
   </form>
 <% } else { %>
   <form action="/favourites" method="POST" class="flex-1">
     <input type="hidden" name="id" value="<%= home.id %>">
-    <button type="submit" class="w-full bg-green-500 hover:bg-green-600 text-white py-2 px-3 rounded transition duration-300 text-sm">
+    <button type="submit" class="w-full bg-green-500 hover:bg-green-600 text-white py-3 px-4 rounded transition duration-300 text-base font-semibold shadow-sm">
       🤍 Add
     </button>
   </form>
